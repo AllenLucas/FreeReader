@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FreeReader</string>
+    <string name="net_erro">网络不给力</string>
+    <string name="title_dashboard">精选</string>
+    <string name="title_notifications">书城</string>
+    <string name="shlef">书架</string>
+</resources>
