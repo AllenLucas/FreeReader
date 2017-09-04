@@ -9,7 +9,6 @@ import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
@@ -30,7 +29,6 @@ import java.util.concurrent.TimeUnit
 class StoreActivity : AppCompatActivity() {
 
     var tablayout : TabLayout? = null
-//    var viewpagerlayout : LinearLayout? =null
     var viewpager : FrameLayout? =null
     var reclcerview : LinearLayout? =null
     val fragmentList = arrayListOf<Fragment>()
@@ -65,7 +63,6 @@ class StoreActivity : AppCompatActivity() {
         val viewgroup = header_viewpager_dot_layout
         val list = MyApplication.bannerList
         val imageViews = arrayOfNulls<ImageView>(list?.size!!)
-        Log.e("size",list.size.toString())
         for (i in 0 until imageViews.size) {
             val imageView = ImageView(this)
             imageView.layoutParams = ViewGroup.LayoutParams(5, 5)
