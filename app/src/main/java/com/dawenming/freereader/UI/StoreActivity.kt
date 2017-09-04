@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
@@ -34,6 +35,7 @@ class StoreActivity : AppCompatActivity() {
     val fragmentList = arrayListOf<Fragment>()
     val fmanager = supportFragmentManager
     var viewpagerlayout : LinearLayout? =null
+    var recyclerview : RecyclerView? =null
 
 
     fun initRecycler(){
@@ -157,7 +159,7 @@ class StoreActivity : AppCompatActivity() {
             setSupportActionBar(toolbar)
             toolbar.setNavigationOnClickListener { finish() }
         }
-
+        recyclerview = select_recyclerview
         viewpagerlayout = viewpager_layout
         viewpagerlayout?.visibility = View.GONE
         viewpager = header_viewpager_layout
