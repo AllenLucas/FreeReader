@@ -1,4 +1,4 @@
-package com.dawenming.freereader.Base
+package com.zhangshang.freereader.Base
 
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -20,6 +20,7 @@ open class BaseAcivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
+
     }
 
     override fun onDestroy() {
@@ -35,4 +36,5 @@ open class BaseAcivity : AppCompatActivity() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(subscriber))
     }
+
 }

@@ -1,4 +1,4 @@
-package com.dawenming.freereader.Adapter
+package com.zhangshang.freereader.Adapter
 
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager

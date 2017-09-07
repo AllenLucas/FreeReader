@@ -1,8 +1,8 @@
-package com.dawenming.freereader
+package com.zhangshang.freereader
 
 import android.app.Application
-import com.dawenming.freereader.Bean.BannerBean
-import com.dawenming.freereader.Bean.TabBean
+import com.zhangshang.freereader.Bean.BannerBean
+import com.zhangshang.freereader.Bean.TabBean
 
 /**
  * Created by allenlucas on 17-8-29.

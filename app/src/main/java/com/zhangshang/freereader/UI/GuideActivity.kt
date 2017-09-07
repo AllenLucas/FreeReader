@@ -1,10 +1,11 @@
-package com.dawenming.freereader.UI
+package com.zhangshang.freereader.UI
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.zhangshang.freereader.R
 
-import com.dawenming.freereader.R
+import com.zhangshang.freereader.UI.MainActivity
 
 class GuideActivity : AppCompatActivity() {
 

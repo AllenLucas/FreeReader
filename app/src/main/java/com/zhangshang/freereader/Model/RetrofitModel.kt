@@ -1,11 +1,11 @@
-package com.dawenming.freereader.Model
+package com.zhangshang.freereader.Model
 
-import com.dawenming.freereader.Presenter.IBasePresenter
-import com.dawenming.freereader.Utils.InterfaceType
-import com.dawenming.freereader.Utils.MD5
-import com.dawenming.freereader.Utils.Retrofit.ApiClient
-import com.dawenming.freereader.Utils.Retrofit.ApicCallback
 import com.google.gson.Gson
+import com.zhangshang.freereader.Presenter.IBasePresenter
+import com.zhangshang.freereader.Utils.InterfaceType
+import com.zhangshang.freereader.Utils.MD5
+import com.zhangshang.freereader.Utils.Retrofit.ApiClient
+import com.zhangshang.freereader.Utils.Retrofit.ApicCallback
 import okhttp3.RequestBody
 import okhttp3.ResponseBody
 import rx.Observable
@@ -18,12 +18,12 @@ import rx.subscriptions.CompositeSubscription
  * Created by allenlucas on 17-8-30.
  */
 class RetrofitModel : IRetrofitModel{
-    override fun getSearch(key: String, num: String, searchword: String, activity : IBasePresenter,type:String) {
+    override fun getSearch(key: String, num: String, searchword: String, activity : IBasePresenter, type:String) {
         val keyMD5 = MD5.getMessageDigest(key.toByteArray())
         var json = "null"
         addsubscription(
                 ApiClient.retrofit().getVulaeBySEARCH_URL(keyMD5,num,searchword)
-                ,object :ApicCallback(){
+                ,object : ApicCallback(){
             override fun onSuccess(model: ResponseBody) {
                 json = model.string()
             }
@@ -40,7 +40,25 @@ class RetrofitModel : IRetrofitModel{
     }
 
 
+    override fun getDetailspage(key: String, id: String, activity: IBasePresenter) {
+        val keyMD5 = MD5.getMessageDigest(key.toByteArray())
+        val map = hashMapOf<String,String>()
+        map.put("key",keyMD5)
+        map.put("id",id)
+        val body = getBody(map)
+        val apiStores = ApiClient.retrofit()
+        getRequest(activity,apiStores.getVulaeByDETAILSPAGE_URL(body), InterfaceType.DETAILSPAGE_URL)
+    }
 
+    override fun getRecommend(key: String, num: String, activity: IBasePresenter) {
+        val keyMD5 = MD5.getMessageDigest(key.toByteArray())
+        val map = hashMapOf<String,String>()
+        map.put("key",keyMD5)
+        map.put("num",num)
+        val body = getBody(map)
+        val apiStores = ApiClient.retrofit()
+        getRequest(activity,apiStores.getVulaeByRECOMMEND_URL(body),InterfaceType.RECOMMEND_URL)
+    }
 
 
     override fun getBanner(key: String, activity: IBasePresenter) {

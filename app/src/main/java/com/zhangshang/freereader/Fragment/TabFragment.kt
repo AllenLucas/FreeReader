@@ -1,4 +1,4 @@
-package com.dawenming.freereader.Fragment
+package com.zhangshang.freereader.Fragment
 
 import android.os.Bundle
 import android.os.Handler
@@ -12,11 +12,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.dawenming.freereader.Adapter.TabBookAdapter
-import com.dawenming.freereader.Bean.TabBookBean
-import com.dawenming.freereader.Presenter.TabFragmentPresenter
-import com.dawenming.freereader.R
-import com.dawenming.freereader.databinding.TablistItemBinding
+import com.zhangshang.freereader.Adapter.TabBookAdapter
+import com.zhangshang.freereader.Bean.TabBookBean
+import com.zhangshang.freereader.Presenter.TabFragmentPresenter
+import com.zhangshang.freereader.R
+import com.zhangshang.freereader.UI.BookInfoActivity
+import com.zhangshang.freereader.databinding.TablistItemBinding
 
 /**
  * Created by allenlucas on 17-8-31.
@@ -26,7 +27,7 @@ class TabFragment : Fragment() ,ITabPresenter{
 
     var presenter : TabFragmentPresenter? =null
     val list = arrayListOf<TabBookBean.TabBookListBean>()
-    var adapter : TabBookAdapter<TabBookBean.TabBookListBean,TablistItemBinding>? =null
+    var adapter : TabBookAdapter<TabBookBean.TabBookListBean, TablistItemBinding>? =null
     var swiplayout : SwipeRefreshLayout? = null
     var refrshing = false
     var loadmore = false
@@ -62,6 +63,9 @@ class TabFragment : Fragment() ,ITabPresenter{
                         bookbean.total_number.substring(0,bookbean.total_number.length - 4) + "万字"
             }
             b.book = bookbean
+            b.root.setOnClickListener {
+                BookInfoActivity.startAction(context,bookbean.id,bookbean.book_name)
+            }
         }
         adapter?.initList(list)
         recyclerview?.adapter = adapter

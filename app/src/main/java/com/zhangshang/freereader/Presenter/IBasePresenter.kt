@@ -1,4 +1,4 @@
-package com.dawenming.freereader.Presenter
+package com.zhangshang.freereader.Presenter
 
 /**
  * Created by allenlucas on 17-8-30.

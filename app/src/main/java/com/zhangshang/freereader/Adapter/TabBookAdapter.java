@@ -1,4 +1,4 @@
-package com.dawenming.freereader.Adapter;
+package com.zhangshang.freereader.Adapter;
 
 import android.content.Context;
 import android.databinding.DataBindingUtil;
@@ -15,9 +15,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 
-import com.dawenming.freereader.R;
+import com.zhangshang.freereader.R;
 
-import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.List;
 

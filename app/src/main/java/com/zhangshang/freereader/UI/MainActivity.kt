@@ -1,4 +1,4 @@
-package com.dawenming.freereader.UI
+package com.zhangshang.freereader.UI
 
 import android.content.Context
 import android.content.Intent
@@ -11,16 +11,17 @@ import android.support.v7.widget.GridLayoutManager
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import com.dawenming.freereader.Adapter.BookListAdapter
-import com.dawenming.freereader.Base.BaseAcivity
-import com.dawenming.freereader.Bean.BookBean
-import com.dawenming.freereader.Presenter.MainPresenter
-import com.dawenming.freereader.R
-import com.dawenming.freereader.databinding.ShelfItemBookBinding
+import com.zhangshang.freereader.Adapter.BookListAdapter
+import com.zhangshang.freereader.Base.BaseAcivity
+import com.zhangshang.freereader.Bean.BookBean
+import com.zhangshang.freereader.Presenter.MainPresenter
+import com.zhangshang.freereader.databinding.ShelfItemBookBinding
+import com.google.gson.Gson
+import com.zhangshang.freereader.R
 import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.ref.WeakReference
 
-class MainActivity : BaseAcivity() {
+class MainActivity : BaseAcivity() , IActivityPresenter {
 
     var drawerlayout : DrawerLayout?= null
     var drawerToggle : ActionBarDrawerToggle? =null
@@ -117,6 +118,7 @@ class MainActivity : BaseAcivity() {
         val id = item?.itemId
         if (id == R.id.action_search){
             //点击进入搜索页面
+            SearchActivity.startAction(this)
             return true
         }
         if (id == R.id.action_store){
@@ -136,6 +138,9 @@ class MainActivity : BaseAcivity() {
         drawerToggle?.syncState()
     }
 
+
+    override fun getValue(gson: Gson,string: String) {
+    }
 
 
     companion object {

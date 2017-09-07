@@ -1,7 +1,7 @@
-package com.dawenming.freereader.Fragment
+package com.zhangshang.freereader.Fragment
 
-import com.dawenming.freereader.Bean.BookBean
-import com.dawenming.freereader.Bean.TabBookBean
+import com.zhangshang.freereader.Bean.TabBookBean
+
 
 /**
  * Created by allenlucas on 17-8-31.

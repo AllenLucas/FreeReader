@@ -1,4 +1,4 @@
-package com.dawenming.freereader.Bean;
+package com.zhangshang.freereader.Bean;
 
 /**
  * Created by allenlucas on 17-8-30.

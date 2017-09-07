@@ -1,4 +1,4 @@
-package com.dawenming.freereader.Bean;
+package com.zhangshang.freereader.Bean;
 
 import android.databinding.BindingAdapter;
 import android.widget.ImageView;

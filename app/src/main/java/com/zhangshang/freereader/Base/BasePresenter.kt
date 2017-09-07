@@ -1,4 +1,4 @@
-package com.dawenming.freereader.Base
+package com.zhangshang.freereader.Base
 
 import java.lang.ref.Reference
 import java.lang.ref.WeakReference
