@@ -1,8 +1,8 @@
-package com.dawenming.freereader.Utils.Retrofit
+package com.zhangshang.freereader.Utils.Retrofit
 
-import com.dawenming.freereader.BuildConfig
-import com.dawenming.freereader.MyApplication
-import com.dawenming.novelreader.NetworkDetector
+import com.zhangshang.freereader.BuildConfig
+import com.zhangshang.freereader.MyApplication
+import com.zhangshang.novelreader.NetworkDetector
 import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

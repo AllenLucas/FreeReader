@@ -1,4 +1,4 @@
-package com.dawenming.freereader.Utils.Retrofit
+package com.zhangshang.freereader.Utils.Retrofit
 
 import okhttp3.RequestBody
 import okhttp3.ResponseBody
@@ -54,4 +54,10 @@ interface ApiStores {
 
     @POST(BOOKLIST_URL)
     fun getVulaeByBOOKLIST_URL(@Body body:RequestBody) : Observable<ResponseBody>
+
+    @POST(RECOMMEND_URL)
+    fun getVulaeByRECOMMEND_URL(@Body body:RequestBody) : Observable<ResponseBody>
+
+    @POST(DETAILSPAGE_URL)
+    fun getVulaeByDETAILSPAGE_URL(@Body body:RequestBody) : Observable<ResponseBody>
 }
